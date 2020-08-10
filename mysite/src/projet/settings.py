@@ -37,10 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    #
+    'bootstrap4',
+    'crispy_forms',
+    #
     #my APPS
     'accounts',
     'dossierpatient',
+    'analyses',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +135,5 @@ LOGIN_REDIRECT8URL ='/accounts/'
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

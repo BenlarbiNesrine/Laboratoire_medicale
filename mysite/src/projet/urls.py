@@ -22,4 +22,6 @@ urlpatterns = [
     url(r'^$', views.login_redirect , name='login_redirect'),
     url(r'admin/', admin.site.urls),
     url(r'accounts/', include('accounts.urls')),
+    url(r'dossierpatient/', include('dossierpatient.urls')),
+    url(r'analyses/', include('analyses.urls')),
 ]

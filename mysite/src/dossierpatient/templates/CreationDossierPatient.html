@@ -1,0 +1,63 @@
+{% load bootstrap4 %}
+<html>
+{% load static %}
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <title>Creation Dossier Patient</title>
+    <!-- Icons font CSS-->
+    <link href="{%static 'vendor/mdi-font/css/material-design-iconic-font.min.css'%}" rel="stylesheet" media="all">
+    <link href="{%static 'vendor/font-awesome-4.7/css/font-awesome.min.css'%}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="{%static 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i'%}" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{%static 'vendor/select2/select2.min.css '%}" rel="stylesheet" media="all">
+    <link href="{%static 'vendor/datepicker/daterangepicker.css '%}" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- Main CSS-->
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'CreationDossierPatient.css' %}" type"text/css">
+</head>
+<body>
+
+
+
+
+<div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Centre hospitalo-Universitaire Douéra</h2>
+                    <h3 class="title">  Laboratoire Centrale</h3>
+                </div>
+                <div class="card-heading-plus">
+                    <h4 class="title-plus">Dossier Patient</h4>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+          <form method="POST">
+            {% csrf_token %}
+          {% bootstrap_form form %}
+                {% buttons %}
+                <div class="form-row text-center">
+                   <div class="col-12">
+                      <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    </div>
+                 </div>
+                {% endbuttons %}
+
+          </form>
+        </div>
+</div>
+
+
+</body>
+</html>
