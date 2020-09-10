@@ -5,8 +5,7 @@ from accounts.forms import EditProfileForm
 from django.contrib.auth import update_session_auth_hash
 # Create your views here.
 
-def home(request):
-    return render(request, 'registration/home.html')
+
 
 
 

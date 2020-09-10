@@ -42,9 +42,11 @@ INSTALLED_APPS = [
     'crispy_forms',
     #
     #my APPS
+
     'accounts',
     'dossierpatient',
     'analyses',
+    'home',
 ]
 
 MIDDLEWARE = [

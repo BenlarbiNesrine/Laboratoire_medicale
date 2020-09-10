@@ -18,9 +18,11 @@ from django.urls import include , path
 from projet import views
 from django.conf.urls import url
 
+
 urlpatterns = [
     url(r'^$', views.login_redirect , name='login_redirect'),
     url(r'admin/', admin.site.urls),
+    url(r'home/', include('home.urls')),
     url(r'accounts/', include('accounts.urls')),
     url(r'dossierpatient/', include('dossierpatient.urls')),
     url(r'analyses/', include('analyses.urls')),
