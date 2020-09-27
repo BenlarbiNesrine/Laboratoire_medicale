@@ -15,7 +15,7 @@ admin.site.register(DemandeDexamen , DemandeDexamenAdmin)
    #copro-Parasitologie
 
 class CoproParasitologyResultAdmin(admin.ModelAdmin):
-    list_display = ["id" , 'Nom_patient' ,"Age" , 'Sexe' ,
+    list_display = ["id" , 'Nom_patient' ,"Age" , 
                     'Service' , 'Horodatage_création_de_resultat' ]
 
 

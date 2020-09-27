@@ -7,8 +7,5 @@ from django.contrib.auth import update_session_auth_hash
 
 
 def home(request):
-    #return render (request, 'index.html')
+    
     return render (request, 'home.html')
-    #template ='index.html'
-    #context = {}
-    #return render(request, template, context)
