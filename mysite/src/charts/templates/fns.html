@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <title>Accueil</title>
+  </head>
+  <body>
+
+
+
+
+    <nav class="navbar navbar"style="background-color:#4a97f4">
+     <div class="container-fluid">
+       <div class="navbar-header">
+         <a class="navbar-brand" href="#"  style="font-size: 25px;text-transform:capitalize;font-weight: 900;color:white;">CHU D</a>
+       </div>
+       <ul class="nav navbar-nav">
+         <li class="active"><a href="/home" style="color:white;"><span class="glyphicon glyphicon-home">Accueil</span></a></li>
+         <li><a href="/dossierpatient/creation" style="color:white;"><span class="glyphicon glyphicon-plus">Dossier</span></a></li>
+         <li><a href="/analyses/Demande/Creation/"style="color:white;"><span class="glyphicon glyphicon-plus">Demande</span></a></li>
+         <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;"><span class="glyphicon glyphicon-plus">Résultats</span>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Biochimie/Creation/">Biochimie</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/CoproParasitology/Creation/">Copro-Parasitologie</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Bilan-Urgence-Result/Creation/">Bilan d'urgence</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/hemobiologie/Groupage-Sanguin/Creation/">groupage sanguin</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/AcinetobacterResult/Creation/">Acinetobacter</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/ Result/Microbiologie/Enterocoque/Creation/">Enterocoque</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Enterobacteries/Creation/">Enterobacteries</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Staphylocoque/Creation/">Staphylocoque</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Pseudomonas/Creation/">Pseudomonas</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Resultat-Bactériologie/Creation/">Resultat-Bactériologie</a></li>
+        </ul>
+        </li>
+        <li><a  href="/charts/charts/" style="color:white;"><span class="glyphicon glyphicon-stats">Satatistiques</span></a></li>
+       </ul>
+       <ul class="nav navbar-nav navbar-right">
+         <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;"><span class="glyphicon glyphicon-user">Profile</span>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item text-primary" href="/accounts/profile">Votre profile</a></li>
+          <li><a class="dropdown-item text-primary" href="/accounts/profile/edit">Modifier les informations personnelle</a></li>
+          <li><a class="dropdown-item text-primary" href="/accounts/profile/change-password">Changer votre mot de passe </a></li>
+        </ul>
+      </li>
+         <li><a href="/accounts/login" style="color:white;"><span class="glyphicon glyphicon-log-out"> Déconnexion</span></a></li>
+       </ul>
+     </div>
+   </nav>
+
+<div style="margin-left: 35%;margin-top: 2%;">
+<a class="btn btn-outline-primary" href="/charts/charts" role="button" style="{%if service == 'fns'%} background-color: blue;color:white; {% endif%}">FNS</a>
+<a class="btn btn-outline-primary" href="/charts/frottis_sanguin" role="button" style="{%if service == 'frottis_sanguin'%} background-color: blue;color:white; {% endif%}">Frottis sanguin</a>
+<a class="btn btn-outline-primary" href="/charts/tp" role="button" style="{%if service == 'tp'%} background-color: blue;color:white; {% endif%}">TP</a>
+<a class="btn btn-outline-primary" href="/charts/tck" role="button" style="{%if service == 'tck'%} background-color: blue;color:white; {% endif%}">TCK</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie" role="button">biochimie</a>
+</div>
+
+
+<div style="display: flex;flex-wrap: wrap;width: 100%;margin-top: 1%;margin-left: 5%;">
+	<div style="width: 400px;"><canvas id="myChart1" ></canvas><h3 style="text-align: center;">Total 1 : {{totals.total1}}</h3></div>
+	<div style="width: 400px;"><canvas id="myChart2" ></canvas><h3 style="text-align: center;">Total 2 : {{totals.total2}}</h3></div>
+
+	<div style="width: 400px;"><canvas id="myChart3" ></canvas><h3 style="text-align: center;">Total 3 : {{totals.total3}}</h3></div>
+<div style="width: 400px;vertical-align: middle;"><h2 style="margin-top: 20%">Total interne (1+2+3) : {{totals.inte}}</h2></div>
+
+	<div style="width: 400px;"><canvas id="myChart4" ></canvas><h3 style="text-align: center;">Total externe : {{totals.total4}}</h3></div>
+
+
+	<div style="width: 400px;"><h3 style="margin-top: 20%">Total Général (int + ext)) : {{totals.inte_ext}}</h3></div>
+</div>
+
+<script type="text/javascript">
+	var ctx = document.getElementById('myChart1').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    //['COA','POA'.'COB','curtillet','ChirPlastique','ChirGénérale','ChirM-Faciale']
+    data: {
+        labels: ['COA', 'POA', 'COB', 'curtillet', 'Chir Plastique', 'Chir Générale', 'ChirM- Faciale'],
+        datasets: [{
+            label: 'Services chirurgicaux',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{data1}}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+<script type="text/javascript">
+	var ctx = document.getElementById('myChart2').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    /*
+Réa méd
+Rhu
+Méd Interne
+Réa cov
+Néonat
+Pédiatrie
+Maternié
+MTV*/
+    data: {
+        labels: ['Réa méd', 'Rhu', 'Méd Interne', 'Réa cov', 'Néonat', 'Pédiatrie', 'Maternié','MTV'],
+        datasets: [{
+            label: 'Services Médicaux',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{data2}}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+<script type="text/javascript">
+	var ctx = document.getElementById('myChart3').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    /*
+PU T
+PUM COV
+Puchir cov
+PU Chir
+PU MI
+    */
+    data: {
+        labels: ['PU T', 'PUM COV', 'Puchir cov','PU Chir','PU MI'],
+        datasets: [{
+            label: 'pavillons des Urgences',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{data3}}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+<script type="text/javascript">
+	var ctx = document.getElementById('myChart4').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['DDS'],
+        datasets: [{
+            label: 'Patients externes',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{ data4 }}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+
+</body>
+</html>

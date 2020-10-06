@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'accounts/', include('accounts.urls')),
     url(r'dossierpatient/', include('dossierpatient.urls')),
     url(r'analyses/', include('analyses.urls')),
+    url(r'charts/', include('charts.urls')),
 ]

@@ -2,12 +2,13 @@ from django.shortcuts import render ,redirect , HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserChangeForm , PasswordChangeForm
 from accounts.forms import EditProfileForm
-from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth import (REDIRECT_FIELD_NAME, get_user_model, login as auth_login,
+    logout as auth_logout, update_session_auth_hash,logout)
 # Create your views here.
 
-
-
-
+def logout_view(request):
+    logout(request)
+    # Redirect to a success page.
 
 def view_profile(request):
    args ={'user': request.user}

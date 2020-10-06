@@ -18,52 +18,54 @@
     <link rel="stylesheet" href="{%static 'CreatDemandeDexam.css' %}" type"text/css">
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#4a97f4">
+      <div class="navbar-header mr-5">
+        <a class="navbar-brand" href="#"  style="font-size: 25px;text-transform:capitalize;font-weight: 900;color:white;">CHU D</a>
+      </div>
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/home"><strong>Accueil</strong></a>
-          </li>
-          <li>
-            <div class="dropdown">
-              <button class="nav-item active nav-link" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-              <strong>Profile</strong>
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                   <a class="dropdown-item text-primary" href="/accounts/profile">Votre profile</a>
-                   <a class="dropdown-item text-primary" href="/accounts/profile/edit">Modifier les informations personnelles</a>
-                   <a class="dropdown-item text-primary" href="/accounts/profile/change-password">Changer votre mot de passe </a>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/dossierpatient/create"><strong>Ajouter dossier</strong></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/analyses/ Demande/Create-demande"><strong>Ajouter Demande</strong></a>
-          </li>
-          <li>
-            <div class="dropdown">
-              <button class="nav-item active nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-              <strong>Ajouter résultat</strong>
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                   <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Result/Create-Biochimie-Result">Biochimie</a>
-                   <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Result/Create-Biochimie-min-Result">Biochimie pour enfants </a>
-                   <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Create-CoproParasitology-Result">Copro-Parasitologie</a>
-                   <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Create-Bilan-Urgence-Result">Bilan d'urgence</a>
-              </div>
-            </div>
-          </li>
+          <li class="active mr-5 mt-3"><a href="/home" style="color:white;font-family:Times New Roman;">Accueil</a></li>
+          <li class="active mr-5 mt-3"><a href="/dossierpatient/creation" style="color:white;font-family:Times New Roman;"><strong>+</strong>Dossier</a></li>
+          <li class="active mr-5 mt-3"><a href="/analyses/Demande/Creation/"style="color:white;font-family:Times New Roman;"><span class="glyphicon glyphicon-plus"><strong>+</strong>Demande</span></a></li>
+          <li class="dropdown mr-5 mt-3">
+         <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;font-family:Times New Roman;"><strong>+</strong>Résultats
+         <span class="caret"></span></a>
+         <ul class="dropdown-menu">
+           <li><a class="dropdown-item text-primary" href="analyses/Result/Biochimie/Creation/" style="font-family:Times New Roman;">Biochimie</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/Result/CoproParasitology/Creation/" style="font-family:Times New Roman;">Copro-Parasitologie</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/Result/Bilan-Urgence-Result/Creation/" style="font-family:Times New Roman;">Bilan d'urgence</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/Result/hemobiologie/Groupage-Sanguin/Creation/" style="font-family:Times New Roman;">groupage sanguin</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/AcinetobacterResult/Creation/" style="font-family:Times New Roman;">Acinetobacter</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/ Result/Microbiologie/Enterocoque/Creation/" style="font-family:Times New Roman;">Enterocoque</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Enterobacteries/Creation/" style="font-family:Times New Roman;">Enterobacteries</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Staphylocoque/Creation/" style="font-family:Times New Roman;">Staphylocoque</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Pseudomonas/Creation/" style="font-family:Times New Roman;">Pseudomonas</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Resultat-Bactériologie/Creation/" style="font-family:Times New Roman;">Resultat-Bactériologie</a></li>
+         </ul>
+         </li>
+         <li class="active mr-5 mt-3"><a  href="/charts/charts/" style="color:white;font-family:Times New Roman;">Satatistiques</a></li>
+         <li>
+             <form class="form-inline my-2 my-lg-0" action="/action_page.php">
+                  <input class="form-control form-control-sm  mt-2 mr-2 border-0" type="text" placeholder="Chercher">
+                  <button class="nav-item active mt-3 mr-5" type="submit" style="color: white ;font-family:Times New Roman;">Chercher</button>
+             </form>
+         </li>
 
-          <li>
-              <form class="form-inline my-2 my-lg-0" action="/action_page.php">
-                   <input class="form-control mr-sm-2" type="text" placeholder="Chercher">
-                   <button class="nav-item active" type="submit" style="color: white ;"><strong>Chercher</strong></button>
-              </form>
+          <div class="nav navbar-right">
+           <ul class="nav navbar-nav navbar-right">
+             <li class="dropdown mt-3 mr-5">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;font-family:Times New Roman;">Profile
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item text-primary" href="/accounts/profile" style="font-family:Times New Roman;">Votre profile</a></li>
+              <li><a class="dropdown-item text-primary" href="/accounts/profile/edit" style="font-family:Times New Roman;">Modifier les informations personnelles</a></li>
+              <li><a class="dropdown-item text-primary" href="/accounts/profile/change-password" style="font-family:Times New Roman;">Changer votre mot de passe </a></li>
+            </ul>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link " href="/accounts/logout"><strong>Déconnexion</strong></a>
-          </li>
+           <li class="active mt-3"><a href="/accounts/login" style="color:white;font-family:Times New Roman;"> Déconnexion</a></li>
+
+          </ul>
+          </div>
+
 
         </ul>
       </nav>
@@ -86,56 +88,66 @@
 
                     <div class="form-row border border-primary ml-5 mr-5">
                       <div class="container">
-                        <div class="row mt-3">
-
-                          <div class="col mb-3">
+                          <div class="row mt-3">
+                              <div class="col">
                             <label class="col-sm" for="validationCustom01"><strong>Le praticien :</strong></label>
                           <div class="border">
                             {{ form.praticien }}
                           </div>
                         </div>
-                        <div class="w-100"></div>
                           <div class="col">
                             <label class="col-sm" for="validationCustom01"><strong>Nom patient :</strong></label>
                             <div class="border">
                               {{ form.Nom_patient }}
                             </div>
                           </div>
-                          <div class="col">
+                          <div class="w-100"></div>
+                          <div class="col mt-1">
                             <label class="col-sm" for="validationCustom01"><strong>Age :</strong></label>
                             <div class="border">
                               {{ form.Age }}
                             </div>
                           </div>
-                          <div class="w-100"></div>
-                          <div class="col mt-3 mb-3">
+                          <div class="col mt-1">
                             <label class="col-sm" for="validationCustom01"><strong>Horodatage de création de resultat :</strong></label>
                           <div class="border">
                             {{ form.Horodatage_création_de_resultat }}
                           </div>
                         </div>
-                        <div class="col mb-3 mt-3 mb-3"><label class="col-sm" for="validationCustom01"><strong>Service :</strong></label>
-                           <div class="col-sm">
-                             {{ form.Service }}
-                           </div>
-                        </div>
+                        <div class="w-100"></div>
+                        <div class="col mt-1 mb-2"><label class="col-sm" for="validationCustom01"><strong>Service :</strong></label>
+                         <div class="col-sm">
+                           {{ form.Service }}
+                         </div>
+                      </div>
+                        <div class="col mt-1 mb-2"><label class="col-sm" for="validationCustom01"><strong>Cas d'erreur :</strong></label>
+                          <div class="col-sm">
+                       {{ form.Cas_d_erreur }}
+                       </div>
+                       </div>
 
 
 
                       </div>
                     </div>
                   </div>
-                  <div class="form-row border border-primary ml-5 mr-5">
+                  <p class="ml-2 mb-3"> <strong><center>1/ PARAMETRES SANGUIN :</center></strong></p>
+                  <div class="form-row border border-primary ml-5 mr-5 mt-3">
                     <div class="container">
                       <table class="table">
                          <thead>
                            <tr class="text-primary">
                              <th scope="col">Examen</th>
-                             <th scope="col">Résultats</th>
+                             <th scope="col"><center>Résultats</center></th>
                              <th scope="col"><center>Valeur usuelles</center></th>
                            </tr>
                          </thead>
                          <tbody>
+                           <tr>
+                             <th scope="row">Aspect du sérum</th>
+                             <td>{{ form.Aspect_du_sérum }}</td>
+                             <td><center>Clair</center></td>
+                             </tr>
                            <tr>
                             <th scope="row">Glucose</th>
                             <td>{{ form.Glucose }}</td>
@@ -171,11 +183,7 @@
                                 <td>{{ form.Magnésium }}</td>
                                 <td><center>17 - 28 mg/l</center></td>
                                 </tr>
-                                <tr>
-                                  <th scope="row">Aspect du sérum</th>
-                                  <td>{{ form.Aspect_du_sérum }}</td>
-                                  <td><center>Clair</center></td>
-                                  </tr>
+
                                   <tr>
                                    <th scope="row">Cholestérol total</th>
                                    <td>{{ form.Cholestérol_total}}</td>
@@ -277,11 +285,33 @@
                                                  <th scope="row">CK Femme</th>
                                                  <td>{{ form.CK_Femme }}</td>
                                                  <td><center>26 - 140 ui/l</center></td>
-                                                 </tr><tr>
+                                                 </tr>
+                                                   <tr>
                                                   <th scope="row">CK-MB(Activité)</th>
                                                   <td>{{ form.CK_MB }}</td>
                                                   <td><center>2.3 - 9.5 ui/l</center></td>
                                                   </tr>
+
+                                                  <tr>
+                                                   <th scope="row">Troponine</th>
+                                                   <td rowspan="4" class="mt-5"><center>{{ form.Troponine }}</center></td>
+                                                   <td><center>/</center></td>
+                                                   </tr>
+                                                   <tr>
+                                                     <th scope="row">Sujet de sain</th>
+
+                                                     <td><center> < 00.4 ng/ml </center></td>
+                                                     </tr>
+                                                     <tr>
+                                                      <th scope="row">Acontroler </th>
+
+                                                      <td><center> 0.014-0.050 ng/ml</center></td>
+                                                      </tr>
+                                                      <tr>
+                                                       <th scope="row">Infarctus du myocarde avéré</th>
+
+                                                       <td><center>> 0.050 g/ml</center></td>
+                                                       </tr>
                                                   <tr>
                                                    <th scope="row">LDH</th>
                                                    <td>{{ form.LDH }}</td>
@@ -347,6 +377,32 @@
                                                               <th scope="row">PAL DEA(adulte)</th>
                                                               <td><center>74- 768 ui/l</center></td>
                                                             </tr>
+                                                            <tr>
+                                                             <th scope="row">CRP</th>
+                                                             <td>{{ form.CRP }}</td>
+                                                             <td><center> <6 mg/l</center></td>
+                                                             </tr>
+
+                                                             <tr>
+                                                              <th scope="row">Hémoglobine Glyquée</th>
+                                                              <td rowspan="4" class="mt-5"><center>{{ form.HBA1C }}</center></td>
+                                                              <td><center>/</center></td>
+                                                              </tr>
+                                                              <tr>
+                                                                <th scope="row">Sujet de sain</th>
+
+                                                                <td><center> 4.0 - 5.7 %</center></td>
+                                                                </tr>
+                                                                <tr>
+                                                                 <th scope="row">Pré-diabète </th>
+
+                                                                 <td><center> 5.8 - 6.4 %</center></td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                  <th scope="row">Diabète</th>
+
+                                                                  <td><center> >= 6.5 %</center></td>
+                                                                </tr>
                              </tbody>
                              </table>
                            </div>
@@ -435,12 +491,7 @@
                                                       </div>
                                                       </div>
 
-                  <div class="form-row border border-primary ml-5 mr-5">
-                    <div class="container">
-                      <p> cas erreur
-                    </p>
-                    </div>
-                 </div>
+
                   {% buttons %}
                   <div class="form-row text-center">
                   <div class="col-12 mt-5">

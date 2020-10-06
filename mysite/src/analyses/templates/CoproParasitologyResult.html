@@ -8,7 +8,7 @@
     <meta name="description" content="Colorlib Templates">
     <meta name="author" content="Colorlib">
     <meta name="keywords" content="Colorlib Templates">
-    <title>Examen de Copro-Parasitologie</title>
+    <title>Examen de Biochimie</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -18,52 +18,54 @@
     <link rel="stylesheet" href="{%static 'CreatDemandeDexam.css' %}" type"text/css">
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#4a97f4">
+      <div class="navbar-header mr-5">
+        <a class="navbar-brand" href="#"  style="font-size: 25px;text-transform:capitalize;font-weight: 900;color:white;">CHU D</a>
+      </div>
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/home"><strong>Accueil</strong></a>
-          </li>
-          <li>
-            <div class="dropdown">
-              <button class="nav-item active nav-link" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-              <strong>Profile</strong>
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                   <a class="dropdown-item text-primary" href="/accounts/profile">Votre profile</a>
-                   <a class="dropdown-item text-primary" href="/accounts/profile/edit">Modifier les informations personnelles</a>
-                   <a class="dropdown-item text-primary" href="/accounts/profile/change-password">Changer votre mot de passe </a>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/dossierpatient/create"><strong>Ajouter dossier</strong></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/analyses/ Demande/Create-demande"><strong>Ajouter Demande</strong></a>
-          </li>
-          <li>
-            <div class="dropdown">
-              <button class="nav-item active nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-              <strong>Ajouter résultat</strong>
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                   <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Result/Create-Biochimie-Result">Biochimie</a>
-                   <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Result/Create-Biochimie-min-Result">Biochimie pour enfants </a>
-                   <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Create-CoproParasitology-Result">Copro-Parasitologie</a>
-                   <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Create-Bilan-Urgence-Result">Bilan d'urgence</a>
-              </div>
-            </div>
-          </li>
+          <li class="active mr-5 mt-3"><a href="/home" style="color:white;font-family:Times New Roman;">Accueil</a></li>
+          <li class="active mr-5 mt-3"><a href="/dossierpatient/creation" style="color:white;font-family:Times New Roman;"><strong>+</strong>Dossier</a></li>
+          <li class="active mr-5 mt-3"><a href="/analyses/Demande/Creation/"style="color:white;font-family:Times New Roman;"><span class="glyphicon glyphicon-plus"><strong>+</strong>Demande</span></a></li>
+          <li class="dropdown mr-5 mt-3">
+         <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;font-family:Times New Roman;"><strong>+</strong>Résultats
+         <span class="caret"></span></a>
+         <ul class="dropdown-menu">
+           <li><a class="dropdown-item text-primary" href="analyses/Result/Biochimie/Creation/" style="font-family:Times New Roman;">Biochimie</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/Result/CoproParasitology/Creation/" style="font-family:Times New Roman;">Copro-Parasitologie</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/Result/Bilan-Urgence-Result/Creation/" style="font-family:Times New Roman;">Bilan d'urgence</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/Result/hemobiologie/Groupage-Sanguin/Creation/" style="font-family:Times New Roman;">groupage sanguin</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/AcinetobacterResult/Creation/" style="font-family:Times New Roman;">Acinetobacter</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/ Result/Microbiologie/Enterocoque/Creation/" style="font-family:Times New Roman;">Enterocoque</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Enterobacteries/Creation/" style="font-family:Times New Roman;">Enterobacteries</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Staphylocoque/Creation/" style="font-family:Times New Roman;">Staphylocoque</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Pseudomonas/Creation/" style="font-family:Times New Roman;">Pseudomonas</a></li>
+           <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Resultat-Bactériologie/Creation/" style="font-family:Times New Roman;">Resultat-Bactériologie</a></li>
+         </ul>
+         </li>
+         <li class="active mr-5 mt-3"><a  href="/charts/charts/" style="color:white;font-family:Times New Roman;">Satatistiques</a></li>
+         <li>
+             <form class="form-inline my-2 my-lg-0" action="/action_page.php">
+                  <input class="form-control form-control-sm  mt-2 mr-2 border-0" type="text" placeholder="Chercher">
+                  <button class="nav-item active mt-3 mr-5" type="submit" style="color: white ;font-family:Times New Roman;">Chercher</button>
+             </form>
+         </li>
 
-          <li>
-              <form class="form-inline my-2 my-lg-0" action="/action_page.php">
-                   <input class="form-control mr-sm-2" type="text" placeholder="Chercher">
-                   <button class="nav-item active" type="submit" style="color: white ;"><strong>Chercher</strong></button>
-              </form>
+          <div class="nav navbar-right">
+           <ul class="nav navbar-nav navbar-right">
+             <li class="dropdown mt-3 mr-5">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;font-family:Times New Roman;">Profile
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item text-primary" href="/accounts/profile" style="font-family:Times New Roman;">Votre profile</a></li>
+              <li><a class="dropdown-item text-primary" href="/accounts/profile/edit" style="font-family:Times New Roman;">Modifier les informations personnelles</a></li>
+              <li><a class="dropdown-item text-primary" href="/accounts/profile/change-password" style="font-family:Times New Roman;">Changer votre mot de passe </a></li>
+            </ul>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link " href="/accounts/logout"><strong>Déconnexion</strong></a>
-          </li>
+           <li class="active mt-3"><a href="/accounts/login" style="color:white;font-family:Times New Roman;"> Déconnexion</a></li>
+
+          </ul>
+          </div>
+
 
         </ul>
       </nav>
@@ -91,99 +93,50 @@
 
                     <div class="form-row border border-primary ml-5 mr-5">
                       <div class="container">
-                        <div class="row">
-                          <div class="col mt-3">
+                        <div class="row mt-3">
+                          <div class="col">
                             <label class="col-sm" for="validationCustom01"><strong>Nom patient :</strong></label>
                             <div class="border">
                               {{ form.Nom_patient }}
                             </div>
                           </div>
-                          <div class="col mt-3">
+                          <div class="col"><label class="col-sm" for="validationCustom01"><strong>Adresse :</strong></label>
+                          <div class="border">
+                            {{ form.Adresse }}
+                          </div>
+                        </div>
+                        <div class="w-100"></div>
+                          <div class="col mt-1">
                             <label class="col-sm" for="validationCustom01"><strong>Age :</strong></label>
                             <div class="border">
                               {{ form.Age }}
                             </div>
                           </div>
-                          <div class="w-100"></div>
-                          <div class="col mt-3">
-                            <label class="col-sm" for="validationCustom01"><strong>Nom patient :</strong></label>
-                          <div class="border">
-                            {{ form.Nom_patient }}
-                          </div></div>
-                          <div class="col mt-3">
+                          <div class="col mt-1">
                             <label class="col-sm" for="validationCustom01"><strong>Horodatage de création de resultat :</strong></label>
                           <div class="border">
                             {{ form.Horodatage_création_de_resultat }}
                           </div></div>
                           <div class="w-100"></div>
-                          <div class="col mb-3 mt-3"><label class="col-sm" for="validationCustom01"><strong>Adresse :</strong></label>
-                          <div class="border">
-                            {{ form.Adresse }}
-                          </div></div>
-                          <div class="col mb-3 mt-3"><label class="col-sm" for="validationCustom01"><strong>Service :</strong></label>
+                          <div class="col mb-2 mt-1"><label class="col-sm" for="validationCustom01"><strong>Service :</strong></label>
                            <div class="col-sm">
                              {{ form.Service }}
                            </div>
                         </div>
+                          <div class="col mb-2 mt-1"><label class="col-sm" for="validationCustom01"><strong>Cas d'erreur :</strong></label>
+                            <div class="col-sm">
+                         {{ form.Cas_d_erreur}}
+                         </div>
+                         </div>
                         </div>
                       </div>
-
-
-
                         </div>
-                        <div class="form-row border border-primary ml-5 mr-5">
-                          <div class="col-md-12 mb-12 mt-3">
-                            <label  class="col-sm" for="validationCustom01"><strong>symptômes :</strong></label>
-                            <div class="border ml-3">
-                              {{ form.Symptomes }}
-                            </div>
-                          </div>
-                            <div class="col-md-4  mt-3">
-                              <label  class="col-sm" for="validationCustom01"><strong>Douleurs :</strong><center>{{ form.Douleurs }}</center></label>
 
-                            </div>
-                            <div class="col-md-4  mt-3">
-                              <label  class="col-sm" for="validationCustom01"><strong>Diarrhée :</strong><center>{{ form.Diarrhée }}</center></label>
-
-                            </div>
-                            <div class="col-md-4   mt-3">
-                              <label  class="col-sm" for="validationCustom01"><strong>Nausées :</strong><center>{{ form.Nausées }}</center></label>
-
-                            </div>
-                            <div class="col-md-4  mt-3">
-                              <label  class="col-sm" for="validationCustom01"><strong>Vomissement :</strong> <center> {{ form.Vomissement }}</center></label>
-
-                            </div>
-                            <div class="col-md-4  mt-3">
-                              <label class="col-sm" for="validationCustom01"><strong>Amaigrissement :</strong><center>{{ form.Amaigrissement }}</center></label>
-
-                            </div>
-                            <div class="col-md-4   mt-3">
-                              <label  class="col-sm" for="validationCustom01"><strong>Constipation :</strong><center>{{ form.Constipation }}</center></label>
-
-                            </div>
-                            <div class="col-md-4   mt-3">
-                              <label class="col-sm"  for="validationCustom01"><strong>Ballonnement abdominal :</strong><center>{{ form.Constipation }}</center></label>
-
-                            </div>
-                            <div class="col-md-12 mb-12  mt-1">
-                              <label class="col-sm" for="validationCustom01"><strong>Autre :</strong></label>
-                              <div class="border ml-3">
-                                {{ form.Autre }}
-                              </div>
-                            </div>
-                            <div class="col-md-12 mb-12  mt-3 mb-3">
-                              <label  class="col-sm" for="validationCustom01"><strong>Examen_Complémentaire :</strong></label>
-                              <div class="border ml-3">
-                                {{ form.Examen_Complémentaire }}
-                              </div>
-                            </div>
-                            </div>
 
 
                             <div class=" border border-primary ml-5 mr-5">
                             <div class="col-md-12 mb-12">
-                              <label class="col-sm" for="validationCustom01"><strong>Résultat :</strong></label>
+                              <label class="col-sm mt-3" for="validationCustom01"><strong>Résultat :</strong></label>
                               <div class="border">
                                 {{ form.Résultat }}
                               </div>
@@ -237,13 +190,9 @@
                               </div>
 
                             </div>
-                            </div>
-                            <div class="form-row border border-primary  mt-3 ml-5 mr-5">
-                              <div class="container">
-                                <p> cas erreur
-                              </p>
-                              </div>
-                           </div>
+                          </div>
+
+
                     {% buttons %}
                     <div class="form-row text-center">
                        <div class="col-12 mt-5">

@@ -7,7 +7,7 @@ from .models import DossierPatient
 
 
 class DossierPatientAdmin(admin.ModelAdmin):
-    list_display = ["id" , "nom_patient" , "sexe","date_de_naissance","Horodatage_création_de_dossier"]
+    list_display = ["id" , "nom_patient" , "sexe","date_de_naissance","Horodatage_creation_de_dossier","email"]
 
 
 admin.site.register(DossierPatient , DossierPatientAdmin)

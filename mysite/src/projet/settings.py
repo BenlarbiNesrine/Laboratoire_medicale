@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'dossierpatient',
     'analyses',
     'home',
+    'charts',
 ]
 
 MIDDLEWARE = [
@@ -135,7 +136,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT8URL ='/Home/'
+LOGIN_REDIRECT_URL ='/home/'
+LOGOUT_REDIRECT_URL ='/accounts/login/'
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025

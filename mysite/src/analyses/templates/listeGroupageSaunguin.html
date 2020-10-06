@@ -1,0 +1,107 @@
+
+   <!DOCTYPE html>
+   <html>
+   {% load static %}
+   <head>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+         <!-- Include all compiled plugins (below), or include individual files as needed -->
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+     <!-- Title Page-->
+
+       <title>Liste dossier patient</title>
+
+     </head>
+     <body style="background-color: #b2c7f1;">
+       <nav class="navbar navbar"style="background-color:#4a97f4">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"  style="font-size: 25px;text-transform:capitalize;font-weight: 900;color:white;">CHU D</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/home" style="color:white;"><span class="glyphicon glyphicon-home">Accueil</span></a></li>
+            <li><a href="/dossierpatient/creation" style="color:white;"><span class="glyphicon glyphicon-plus">Dossier</span></a></li>
+            <li><a href="/analyses/Demande/Creation/"style="color:white;"><span class="glyphicon glyphicon-plus">Demande</span></a></li>
+            <li class="dropdown">
+           <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;"><span class="glyphicon glyphicon-plus">Résultats</span>
+           <span class="caret"></span></a>
+           <ul class="dropdown-menu">
+             <li><a class="dropdown-item text-primary" href="analyses/Result/Biochimie/Creation/">Biochimie</a></li>
+             <li><a class="dropdown-item text-primary" href="analyses/Result/CoproParasitology/Creation/">Copro-Parasitologie</a></li>
+             <li><a class="dropdown-item text-primary" href="analyses/Result/Bilan-Urgence-Result/Creation/">Bilan d'urgence</a></li>
+             <li><a class="dropdown-item text-primary" href="analyses/Result/hemobiologie/Groupage-Sanguin/Creation/">groupage sanguin</a></li>
+             <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/AcinetobacterResult/Creation/">Acinetobacter</a></li>
+             <li><a class="dropdown-item text-primary" href="analyses/ Result/Microbiologie/Enterocoque/Creation/">Enterocoque</a></li>
+             <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Enterobacteries/Creation/">Enterobacteries</a></li>
+             <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Staphylocoque/Creation/">Staphylocoque</a></li>
+             <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Pseudomonas/Creation/">Pseudomonas</a></li>
+             <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Resultat-Bactériologie/Creation/">Resultat-Bactériologie</a></li>
+           </ul>
+           </li>
+           <li><a  href="/charts/charts/" style="color:white;"><span class="glyphicon glyphicon-stats">Satatistiques</span></a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+           <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;"><span class="glyphicon glyphicon-user">Profile</span>
+           <span class="caret"></span></a>
+           <ul class="dropdown-menu">
+             <li><a class="dropdown-item text-primary" href="/accounts/profile">Votre profile</a></li>
+             <li><a class="dropdown-item text-primary" href="/accounts/profile/edit">Modifier les informations personnelles</a></li>
+             <li><a class="dropdown-item text-primary" href="/accounts/profile/change-password">Changer votre mot de passe </a></li>
+           </ul>
+         </li>
+            <li><a href="/accounts/login" style="color:white;"><span class="glyphicon glyphicon-log-out"> Déconnexion</span></a></li>
+          </ul>
+        </div>
+      </nav>
+
+
+    <div class="container">
+      <div class="row my-4">
+        <div class="row  text-center mt-3">
+           <a href="dossierpatient/exporter/pdf/" class="btn btn" style="color:white;background-color:#57afe6"><left>Exporter en PDF</left> </a>
+           <a href="dossierpatient/exporter/excel/" class="btn btn"style="color:white; background-color:#42abed">Exporter en Excel </a>
+           <a href="dossierpatient/exporter/svc/" class="btn btn " style="color:white; background-color:#42abed">Exporter en CSV </a>
+
+           </div>
+
+        <div class="form-group row -md-4">
+
+        </div>
+      </div>
+      <table class="table table-striped">
+        <div class="active-cyan-3 active-cyan-4 mb-4">
+     <input class="form-control" type="text" placeholder="Chercher patient" aria-label="Search">
+   </div>
+   <div class="form-group row -md-4">
+        <thead>
+          <tr style="background-color:#84b3f0;">
+             <th><Center>Nom Patient</Center></th>
+             <th><Center>Groupe</Center></th>
+             <th><Center>Rh</Center></th>
+             <th><Center>Groupé le</Center></th>
+             <th><Center>Actions</Center></th>
+          </tr>
+
+        </thead>
+
+       {% for GroupageSanguin in main %}
+     <tbody>
+     <tr>
+       <td><Center>{{ GroupageSanguin.Nom_patient }}</Center></td>
+       <td><Center>{{ GroupageSanguin.Groupe }}</Center></td>
+       <td><Center>{{ GroupageSanguin.Rh }}</Center></td>
+       <td><Center>{{ GroupageSanguin.Horodatage_creation_de_groupage }}</Center></td>
+       <td> <center>
+         <a href="dossierpatient/ edit/{{ DossierPatient.id }}"><span class="btn btn-primary">Modifier</span></a>
+
+       </center>
+       </td>
+     </tr>
+     {% endfor %}
+     </tbody>
+     </table>
+     </div>
+     </body>
+     </html>

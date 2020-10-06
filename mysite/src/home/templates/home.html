@@ -1,109 +1,100 @@
-<!-- Grey with black text -->
 <!DOCTYPE html>
+
 <html lang="en" dir="ltr">
-
   <head>
-
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <title>Accueil</title>
-
   </head>
-  <body style="background-color: #8EA2C6;">
-
-    <!-- Blue with white text -->
+  <body style="background-color: #9eb2ca ;">
 
 
-    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-      <nav class="navbar navbar-dark bg-primary">
 
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="btn btn-primary" href="/home"><strong>Accueil</strong></a>
-          </li>
 
-          <li>
-            <div class="dropdown">
-              <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-              <strong>Profile</strong>
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                   <a class="dropdown-item text-primary" href="/accounts/profile">Votre profile</a>
-                   <a class="dropdown-item text-primary" href="/accounts/profile/edit">Modifier les informations personnelles</a>
-                   <a class="dropdown-item text-primary" href="/accounts/profile/change-password">Changer votre mot de passe </a>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item active">
-            <a class="btn btn-primary" href="/dossierpatient/create"><strong>Ajouter dossier</strong></a>
-          </li>
-          <li class="nav-item active">
-            <a class="btn btn-primary" href="/analyses/ Demande/Create-demande"><strong>Ajouter Demande</strong></a>
-          </li>
-          <li>
-            <div class="dropdown">
-              <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-              <strong>Ajouter résultat</strong>
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                   <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Result/Create-Biochimie-Result">Biochimie</a>
-                   <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Result/Create-Biochimie-min-Result">Biochimie pour enfants </a>
-                   <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Create-CoproParasitology-Result">Copro-Parasitologie</a>
-                   <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Create-Bilan-Urgence-Result">Bilan d'urgence</a>
-              </div>
-            </div>
-          </li>
-
-          <li class="nav-item active">
-            <a class="btn btn-primary" href="/accounts/logout"><strong>Déconnexion</strong></a>
-          </li>
-
+    <nav class="navbar navbar"style="background-color:#4a97f4">
+     <div class="container-fluid">
+       <div class="navbar-header">
+         <a class="navbar-brand" href="#"  style="font-size: 25px;text-transform:capitalize;font-weight: 900;color:white;">CHU D</a>
+       </div>
+       <ul class="nav navbar-nav">
+         <li class="active"><a href="/home" style="color:white;"><span class="glyphicon glyphicon-home">Accueil</span></a></li>
+         <li><a href="/dossierpatient/creation" style="color:white;"><span class="glyphicon glyphicon-plus">Dossier</span></a></li>
+         <li><a href="/analyses/Demande/Creation/"style="color:white;"><span class="glyphicon glyphicon-plus">Demande</span></a></li>
+         <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;"><span class="glyphicon glyphicon-plus">Résultats</span>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Biochimie/Creation/">Biochimie</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/CoproParasitology/Creation/">Copro-Parasitologie</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Bilan-Urgence-Result/Creation/">Bilan d'urgence</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/hemobiologie/Groupage-Sanguin/Creation/">groupage sanguin</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/AcinetobacterResult/Creation/">Acinetobacter</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/ Result/Microbiologie/Enterocoque/Creation/">Enterocoque</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Enterobacteries/Creation/">Enterobacteries</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Staphylocoque/Creation/">Staphylocoque</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Pseudomonas/Creation/">Pseudomonas</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Resultat-Bactériologie/Creation/">Resultat-Bactériologie</a></li>
         </ul>
-      </nav>
-      </nav>
+        </li>
+        <li><a  href="/charts/charts/" style="color:white;"><span class="glyphicon glyphicon-stats">Satatistiques</span></a></li>
+       </ul>
+       <ul class="nav navbar-nav navbar-right">
+         <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;"><span class="glyphicon glyphicon-user">Profile</span>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item text-primary" href="/accounts/profile">Votre profile</a></li>
+          <li><a class="dropdown-item text-primary" href="/accounts/profile/edit">Modifier les informations personnelle</a></li>
+          <li><a class="dropdown-item text-primary" href="/accounts/profile/change-password">Changer votre mot de passe </a></li>
+        </ul>
+      </li>
+         <li><a href="/accounts/login" style="color:white;"><span class="glyphicon glyphicon-log-out"> Déconnexion</span></a></li>
+       </ul>
+     </div>
+   </nav>
 
-      <h1 class="title" style="margin: 50px ; text-align: center;font-size: 50px;text-transform:capitalize;font-weight: 1000;color:white;">Fichier des examens - Laboratoires</h1>
-      <div class="filters">
+                                                               <!-- content-->
+
+   <h1 class="title" style="margin: 50px ; text-align: center;font-size: 50px;text-transform:capitalize;font-weight: 1000;color:white;">Fichier des examens - Laboratoires</h1>
+   <div class="filters">
+     <div class="container">
       <form method="post">
-       <div class="form-row border border mt-5 mb-5 ml-5 mr-5" style="background-color:#b2c7f1;">
-         <div class="col mt-5 mb-5 ml-5 mr-5">
-           <div style="color:white;">
-            <h2><center><strong>Recherche</strong></center></h2>
-         </div>
+        <div class="form-row border border mt-5 ml-5 mr-5" style="background-color:#78b5ff;">
 
-
-
-                                  <div class="form-horizontal">
-                                      <div class="form-group row">
-                                          <label for="SearchKeyword" class="col-xs-12 col-sm-5 col-md-3 col-form-label" style="color:white;"><strong>Nom à rechercher</strong></label>
-                                          <div class="col-12 col-sm-6">
-                                              <input class="form-control" id="SearchKeyword" name="SearchKeyword" type="text" value="" />
-                                          </div>
-                                      </div>
-                                  </div>
-
-                                      <div class="form-group row">
-                                          <div class="col-12" style='text-align:center;color:white'><strong>ou rechercher par filtres (pour les demande d'examen)</strong></div>
-                                      </div>
-                                      <div class="form-group row">
-                                          <label for="SearchKeyword" class="col-xs-12 col-sm-5 col-md-3 col-form-label" style="color:white;"><strong>Date de naissance à rechercher</strong></label>
-                                          <div class="col-12 col-sm-6">
-                                              <input class="form-control" id="SearchKeyword" name="SearchKeyword" type="text" value="" />
-                                          </div>
-
-</form>
-</div>
-<div class="form-group form-group-spaced">
-<div class="col-xs-12 text-center mt-5">
-<button type="button" class="btn btn"style="color:white;background-color:#7F8FA6;" id="btnReset"><strong>Réinitialiser</strong></button>
-<button type="submit" class="btn btn" style="color:white;background-color:#7F8FA6;"id="btnSearch"><strong>Chercher</strong></button>
-<button type="submit" class="btn btn" style="color:white;background-color:#7F8FA6;"id="btnList"><strong>Liste des dossiers</strong></button>
-</div>
-</div>
-
-</section>
-  </body>
+          <div class="container mb-5 mt-5 mr-5 ml-5">
+            <div style="color:white;">
+             <h2><center><strong>Recherche</strong></center></h2>
+             </div>
+             <div class="form-horizontal">
+                 <div class="form-group row">
+                     <label for="SearchKeyword" class="col-xs-12 col-sm-5 col-md-3 col-form-label" style="color:white;"><strong>Nom à rechercher</strong></label>
+                     <div class="col-12 col-sm-6">
+                         <input class="form-control" id="SearchKeyword" name="SearchKeyword" type="text" value="" />
+                     </div>
+                 </div>
+             </div>
+             <div class="form-group row">
+                 <div class="col-12" style='text-align:center;color:white'><strong>ou rechercher par filtres (pour les demande d'examen)</strong></div>
+             </div>
+             <div class="form-group row">
+                 <label for="SearchKeyword" class="col-xs-12 col-sm-5 col-md-3 col-form-label" style="color:white;"><strong>Date de naissance à rechercher</strong></label>
+                 <div class="col-12 col-sm-6">
+                     <input class="form-control" id="SearchKeyword" name="SearchKeyword" type="text" value="" />
+                 </div>
+                 </div>
+                 <div class=" form-group row  text-center mt-3">
+                 <a class="btn btn" href="/home"style="color:white;background-color:#7F8FA6;"><strong><span class="glyphicon glyphicon-repeat">Réinitialiser</span></strong></a>
+                 <button type="submit" class="btn btn" style="color:white;background-color:#7F8FA6;"id="btnSearch"><strong><span class="glyphicon glyphicon-search">Chercher</span></strong></button>
+                 <a class="btn btn" href="/dossierpatient/ListDossierPatient"style="color:white;background-color:#7F8FA6;font-family:Times New Roman;">Liste des dossiers</a>
+                 <a class="btn btn" href="/analyses/Result/hemobiologie/Groupage-Sanguin/Liste/"style="color:white;background-color:#7F8FA6;font-family:Times New Roman;">liste de groupage sanguin </a>
+                 </div>
+          </div>
+        </div>
+      </form>
+    </div>
+   </div>
+       </body>
 </html>

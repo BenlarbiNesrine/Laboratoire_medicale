@@ -14,12 +14,33 @@
 <body>
   <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
       <ul class="navbar-nav">
+        <li style="font-size: 30px;text-transform:capitalize;font-weight: 1000;color:#8EA2C6" class="mr-5">CHU D</li>
         <li class="nav-item active">
-          <a class="nav-link" href="/home"><strong>Accueil</strong></a>
+          <a class="nav-link class="mr-5"" href="/home"><strong>Accueil</strong></a>
         </li
+
+        <li class="nav-item active">
+          <a class="nav-link class="mr-5"" href="/dossierpatient/create"><strong>Ajouter dossier</strong></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link class="mr-5"" href="/analyses/ Demande/Create-demande"><strong>Ajouter Demande</strong></a>
+        </li>
         <li>
           <div class="dropdown">
-            <button class="btn btn" type="button"  style="color: white ;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            <button class="btn btn class="mr-5"" type="button" id="dropdownMenuButton"  style="color: white ;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            <strong>Ajouter résultat</strong>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                 <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Result/Create-Biochimie-Result">Biochimie</a>
+                
+                 <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Create-CoproParasitology-Result">Copro-Parasitologie</a>
+                 <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Create-Bilan-Urgence-Result">Bilan d'urgence</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="dropdown">
+            <button class="btn btn class="mr-5"" type="button"  style="color: white ;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
             <strong>Profile</strong>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -29,30 +50,11 @@
             </div>
           </div>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="/dossierpatient/create"><strong>Ajouter dossier</strong></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="/analyses/ Demande/Create-demande"><strong>Ajouter Demande</strong></a>
-        </li>
-        <li>
-          <div class="dropdown">
-            <button class="btn btn" type="button" id="dropdownMenuButton"  style="color: white ;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-            <strong>Ajouter résultat</strong>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                 <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Result/Create-Biochimie-Result">Biochimie</a>
-                 <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Result/Create-Biochimie-min-Result">Biochimie pour enfants </a>
-                 <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Create-CoproParasitology-Result">Copro-Parasitologie</a>
-                 <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Create-Bilan-Urgence-Result">Bilan d'urgence</a>
-            </div>
-          </div>
-        </li>
 
         <li>
             <form class="form-inline my-2 my-lg-0" action="/action_page.php">
                  <input class="form-control mr-sm-2" type="text" placeholder="Chercher">
-                 <button class="btn btn" type="submit" style="color: white ;"><strong>Chercher</strong></button>
+                 <button class="btn btn class="mr-5"" type="submit" style="color: white ;"><strong>Chercher</strong></button>
             </form>
         </li>
         <li class="nav-item active">

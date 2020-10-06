@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <title>Accueil</title>
+  </head>
+  <body>
+
+
+
+
+    <nav class="navbar navbar"style="background-color:#4a97f4">
+     <div class="container-fluid">
+       <div class="navbar-header">
+         <a class="navbar-brand" href="#"  style="font-size: 25px;text-transform:capitalize;font-weight: 900;color:white;">CHU D</a>
+       </div>
+       <ul class="nav navbar-nav">
+         <li class="active"><a href="/home" style="color:white;"><span class="glyphicon glyphicon-home">Accueil</span></a></li>
+         <li><a href="/dossierpatient/creation" style="color:white;"><span class="glyphicon glyphicon-plus">Dossier</span></a></li>
+         <li><a href="/analyses/Demande/Creation/"style="color:white;"><span class="glyphicon glyphicon-plus">Demande</span></a></li>
+         <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;"><span class="glyphicon glyphicon-plus">Résultats</span>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Biochimie/Creation/">Biochimie</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/CoproParasitology/Creation/">Copro-Parasitologie</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Bilan-Urgence-Result/Creation/">Bilan d'urgence</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/hemobiologie/Groupage-Sanguin/Creation/">groupage sanguin</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/AcinetobacterResult/Creation/">Acinetobacter</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/ Result/Microbiologie/Enterocoque/Creation/">Enterocoque</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Enterobacteries/Creation/">Enterobacteries</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Staphylocoque/Creation/">Staphylocoque</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Pseudomonas/Creation/">Pseudomonas</a></li>
+          <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Resultat-Bactériologie/Creation/">Resultat-Bactériologie</a></li>
+        </ul>
+        </li>
+        <li><a  href="/charts/charts/" style="color:white;"><span class="glyphicon glyphicon-stats">Satatistiques</span></a></li>
+       </ul>
+       <ul class="nav navbar-nav navbar-right">
+         <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;"><span class="glyphicon glyphicon-user">Profile</span>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item text-primary" href="/accounts/profile">Votre profile</a></li>
+          <li><a class="dropdown-item text-primary" href="/accounts/profile/edit">Modifier les informations personnelle</a></li>
+          <li><a class="dropdown-item text-primary" href="/accounts/profile/change-password">Changer votre mot de passe </a></li>
+        </ul>
+      </li>
+         <li><a href="/accounts/login" style="color:white;"><span class="glyphicon glyphicon-log-out"> Déconnexion</span></a></li>
+       </ul>
+     </div>
+   </nav>
+
+
+<div style="margin-left: 35%;margin-top: 2%;">
+<a class="btn btn-outline-primary" href="/charts/charts" role="button" >FNS</a>
+<a class="btn btn-outline-primary" href="/charts/frottis_sanguin" role="button">Frottis sanguin</a>
+<a class="btn btn-outline-primary" href="/charts/tp" role="button" >TP</a>
+<a class="btn btn-outline-primary" href="/charts/tck" role="button">TCK</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie" role="button" style="background-color: blue;color:white;">biochimie</a>
+</div>
+
+<div style="margin-top: 2%;display: flex;flex-wrap: wrap; width:100%;margin-left: 3%">
+<a class="btn btn-outline-primary" href="/charts/biochimie/coa" role="button" style=" {%if service == 'coa'%}background-color: blue;color:white; {%endif%} margin-right: 2px;" >coa</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/poa" role="button" style="{%if service == 'poa'%}background-color: blue;color:white; {%endif%}margin-right: 2px;">poa</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/cob" role="button" style="{%if service == 'cob'%}background-color: blue;color:white; {%endif%}margin-right: 2px;" >cob</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/curtillet" role="button" style="{%if service == 'curtillet'%}background-color: blue;color:white; {%endif%}margin-right: 2px;" >curtillet</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/Plastique" role="button" style="{%if service == 'Plastique'%}background-color: blue;color:white; {%endif%}margin-right: 2px;" >Chir Plastique</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/chir_Générale" role="button" style="{%if service == 'chir_Générale'%}background-color: blue;color:white; {%endif%}margin-right: 2px;" >Chir Générale</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/ChirM_Faciale" role="button" style="{%if service == 'ChirM_Faciale'%}background-color: blue;color:white; {%endif%}margin-right: 2px;" >ChirM- Faciale</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/Réa_Méd" role="button"  style="{%if service == 'Réa_Méd'%}background-color: blue;color:white; {%endif%}margin-right: 2px;">Réa méd</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/Méd_Interne" role="button" style="{%if service == 'Méd_Interne'%}background-color: blue;color:white; {%endif%}margin-right: 2px;" >Méd Interne</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/Réa_cov" role="button" style="{%if service == 'Réa_cov'%}background-color: blue;color:white; {%endif%}margin-right: 2px;">Réa cov</a>
+
+
+<a class="btn btn-outline-primary" href="/charts/biochimie/Néonat" role="button" style="{%if service == 'Néonat'%}background-color: blue;color:white; {%endif%}margin-right: 2px;" >Néonat</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/Pédiatrie" role="button" style="{%if service == 'Pédiatrie'%}background-color: blue;color:white; {%endif%}margin-right: 2px;" >Pédiatrie</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/Maternié" role="button"  style="{%if service == 'Maternié'%}background-color: blue;color:white; {%endif%}margin-right: 2px;">Maternié</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/MTV" role="button" style="{%if service == 'MTV'%}background-color: blue;color:white; {%endif%}margin-right: 2px;" >MTV</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/PU_T" role="button" style="{%if service == 'PU_T'%}background-color: blue;color:white; {%endif%}margin-right: 2px;" >PU T</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/PUM_COV" role="button" style="{%if service == 'PUM_COV'%}background-color: blue;color:white; {%endif%}margin-right: 2px;" >PUM COV</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/Puchir_cov" role="button" style="{%if service == 'Puchir_cov'%}background-color: blue;color:white; {%endif%}margin-right: 2px;" >Puchir cov</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/PU_Chir" role="button" style="{%if service == 'PU_Chir'%}background-color: blue;color:white; {%endif%}margin-right: 2px;" >PU Chir</a>
+<a class="btn btn-outline-primary" href="/charts/biochimie/PU_MI" role="button"  style="{%if service == 'PU_MI'%}background-color: blue;color:white; {%endif%}margin-right: 2px;">PU MI</a>
+</div>
+
+
+
+
+
+
+
+
+<div style="display: flex;flex-wrap: wrap;width: 100%;margin-top: 1%;margin-left: 5%;">
+
+	<div style="width: 400px;"><canvas id="myChart1" ></canvas></div>
+  <div style="width: 400px;"><canvas id="myChart2" ></canvas></div>
+
+  <div style="width: 400px;"><canvas id="myChart3" ></canvas></div>
+  <div style="width: 400px;"><canvas id="myChart16" ></canvas></div>
+
+
+  <div style="width: 400px;"><canvas id="myChart4" ></canvas></div>
+  <div style="width: 400px;"><canvas id="myChart13" ></canvas></div>
+
+  <div style="width: 400px;"><canvas id="myChart5" ></canvas></div>
+
+
+
+
+
+  <div style="width: 400px;"><canvas id="myChart6" ></canvas></div>
+  <div style="width: 400px;"><canvas id="myChart7" ></canvas></div>
+  <div style="width: 400px;"><canvas id="myChart8" ></canvas></div>
+  <div style="width: 400px;"><canvas id="myChart9" ></canvas></div>
+  <div style="width: 400px;"><canvas id="myChart15" ></canvas></div>
+  <div style="width: 400px;"><canvas id="myChart10" ></canvas></div>
+   <div style="width: 400px;"><canvas id="myChart11" ></canvas></div>
+   <div style="width: 400px;"><canvas id="myChart12" ></canvas></div>
+
+   <div style="width: 400px;"><canvas id="myChart14" ></canvas></div>
+
+
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart1').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    //['COA','POA'.'COB','curtillet','ChirPlastique','ChirGénérale','ChirM-Faciale']
+    data: {
+        labels: ['Glucose', 'Urée', 'Créatinine', 'Sodium', 'Potasium', 'Magnésium'],
+        datasets: [{
+            label: '{{service}}',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{data.data1}}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart2').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+
+    data: {
+        labels: ['Aspect du sérum', 'Cholestérol total', 'Triglycérides', 'LDL Cholestérol'],
+        datasets: [{
+            label: '{{service}}',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{data.data2}}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart3').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    data: {
+        labels: ['Acide urique','Acide urique(enfant)'],
+        datasets: [{
+            label: '{{service}}',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{data.data3}}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+</script>
+
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart16').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    data: {
+        labels: ['Acide urique(Homme)','Acide urique(Femme)'],
+        datasets: [{
+            label: '{{service}}',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{data.data16}}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart4').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['Calcium ionisé','Calcium total'],
+        datasets: [{
+            label: '{{service}}',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{ data.data4 }}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart13').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['Calcium total(Nrs)','Calcium total(Adulte)'],
+        datasets: [{
+            label: '{{service}}',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{ data.data13 }}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+
+</script>
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart5').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['Fer','Fer(Homme)','Fer(Femme)'],
+        datasets: [{
+            label: '{{service}}',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{ data.data5 }}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+
+
+</script>
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart6').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['HDL Cholestérol','HDL Cholestérol(Homme)','HDL Cholestérol(Femme)'],
+        datasets: [{
+            label: '{{service}}',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{ data.data6 }}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+
+
+</script>
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart7').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['Protéines(plasma)','Protéines','Albumine','Amylase'],
+        datasets: [{
+            label: '{{service}}',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{ data.data7 }}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+
+
+</script>
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart8').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['Bilirubine total (ALAT)','Bilirubine directe','Bilirubine indirecte'],
+        datasets: [{
+            label: '{{service}}',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{ data.data8 }}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+</script>
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart14').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['GOT (ASAT)','GPT (ALAT)'],
+        datasets: [{
+            label: '{{service}}',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{ data.data14 }}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+
+</script>
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart9').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['PAL AMP','PAL AMP(enfant)','PAL AMP(adulte)'],
+        datasets: [{
+            label: '{{service}}',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{ data.data9 }}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+</script>
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart15').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['PAL DEA','PAL DEA(enfant)','PAL DEA(adulte)'],
+        datasets: [{
+            label: '{{service}}',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{ data.data15 }}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+
+
+</script>
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart10').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['Microalbumine','Créatinine','Clairance de la créatinine','Sodium','Phosphore'],
+        datasets: [{
+            label: '{{service}}',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{ data.data10 }}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart11').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['y-gt(Homme)','y-gt(Femme)'],
+        datasets: [{
+            label: '{{service}}',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{ data.data11 }}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart12').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['Lipase(calorimétrique)','LDH','Diurèse'],
+        datasets: [{
+            label: '{{service}}',
+            backgroundColor: '#528feb',
+            borderColor: '#327ced',
+            data: {{ data.data12 }}
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+
+
+</body>
+</html>

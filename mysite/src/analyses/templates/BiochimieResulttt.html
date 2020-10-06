@@ -1,0 +1,100 @@
+<html>
+{% load static %}
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <!-- Title Page-->
+    <title>Creation Dossier Patient</title>
+
+
+    <!-- Main CSS-->
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'CreatDemandeDexam.css' %}" type"text/css">
+</head>
+
+<body style="background-color: #b2c7f1;">
+  <nav class="navbar navbar"style="background-color:#4a97f4">
+   <div class="container-fluid">
+     <div class="navbar-header">
+       <a class="navbar-brand" href="#"  style="font-size: 25px;text-transform:capitalize;font-weight: 900;color:white;">CHU D</a>
+     </div>
+     <ul class="nav navbar-nav">
+       <li class="active"><a href="/home" style="color:white;"><span class="glyphicon glyphicon-home">Accueil</span></a></li>
+       <li><a href="/dossierpatient/creation" style="color:white;"><span class="glyphicon glyphicon-plus">Dossier</span></a></li>
+       <li><a href="/analyses/Demande/Creation/"style="color:white;"><span class="glyphicon glyphicon-plus">Demande</span></a></li>
+       <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;"><span class="glyphicon glyphicon-plus">Résultats</span>
+      <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item text-primary" href="analyses/Result/Biochimie/Creation/">Biochimie</a></li>
+        <li><a class="dropdown-item text-primary" href="analyses/Result/CoproParasitology/Creation/">Copro-Parasitologie</a></li>
+        <li><a class="dropdown-item text-primary" href="analyses/Result/Bilan-Urgence-Result/Creation/">Bilan d'urgence</a></li>
+        <li><a class="dropdown-item text-primary" href="analyses/Result/hemobiologie/Groupage-Sanguin/Creation/">groupage sanguin</a></li>
+        <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/AcinetobacterResult/Creation/">Acinetobacter</a></li>
+        <li><a class="dropdown-item text-primary" href="analyses/ Result/Microbiologie/Enterocoque/Creation/">Enterocoque</a></li>
+        <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Enterobacteries/Creation/">Enterobacteries</a></li>
+        <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Staphylocoque/Creation/">Staphylocoque</a></li>
+        <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Pseudomonas/Creation/">Pseudomonas</a></li>
+        <li><a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Resultat-Bactériologie/Creation/">Resultat-Bactériologie</a></li>
+      </ul>
+      </li>
+      <li><a  href="/charts/charts/" style="color:white;"><span class="glyphicon glyphicon-stats">Satatistiques</span></a></li>
+     </ul>
+     <ul class="nav navbar-nav navbar-right">
+       <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;"><span class="glyphicon glyphicon-user">Profile</span>
+      <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item text-primary" href="/accounts/profile">Votre profile</a></li>
+        <li><a class="dropdown-item text-primary" href="/accounts/profile/edit">Modifier les informations personnelles</a></li>
+        <li><a class="dropdown-item text-primary" href="/accounts/profile/change-password">Changer votre mot de passe </a></li>
+      </ul>
+    </li>
+       <li><a href="/accounts/login" style="color:white;"><span class="glyphicon glyphicon-log-out"> Déconnexion</span></a></li>
+     </ul>
+   </div>
+ </nav>
+
+
+  
+
+      <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+          <div class="wrapper wrapper--w790">
+              <div class="card card-5">
+                  <div class="card-heading">
+                      <h2 class="title">Centre hospitalo-Universitaire Douéra</h2>
+                      <h3 class="title">  Laboratoire Centrale</h3>
+                      <h4 class="title">  Unité de Biochimie</h4>
+                  </div>
+                  <div class="card-heading-plus">
+                      <h5 class="title-plus">Fiche de resultats</h5>
+
+                  </div>
+                  <div class="card-heading-plus">
+                    <form class="post-form" action="CreateCoproParasitologyResult" method="post">
+                      {% csrf_token %}
+                      {{ form.as_p }}
+
+
+
+                    <div class="form-row text-center">
+                    <div class="col-12 mt-5">
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    </div>
+
+
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
+
+  </body>
+</html>

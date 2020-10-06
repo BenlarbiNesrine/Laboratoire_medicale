@@ -1,11 +1,10 @@
 from django.conf.urls import url ,include
 from . import views
-from django.contrib.auth.views import LoginView , LogoutView , PasswordResetCompleteView , PasswordResetView , PasswordResetConfirmView ,  PasswordResetDoneView
+from django.contrib.auth.views import (LoginView , LogoutView , PasswordResetCompleteView , PasswordResetView ,
+ PasswordResetConfirmView ,  PasswordResetDoneView)
 
 urlpatterns = [
-    #url(r'^$', views.home),
-    #url('accounts/', include('django.contrib.auth.urls')),
-    #url(r'^accueil/$', views.home, name='home'),
+    
     url(r'^login/$' , LoginView.as_view() , {'template-name':'registration/login.html'}),
     url(r'^logout/$' , LogoutView.as_view() , {'template-name':'registration/logout.html'}),
     url(r'^profile/$' , views.view_profile , name='view_profile'),

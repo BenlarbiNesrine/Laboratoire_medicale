@@ -1,0 +1,130 @@
+<!-- Grey with black text -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    {% load static%}
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Accueil</title>
+
+
+  </head>
+  <body style="background-color: #8EA2C6;">
+
+    <!-- Blue with white text -->
+
+
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+      <div class="navbar-nav mr-auto">
+        <ul class="navbar-nav">
+          <li style="font-size: 30px;text-transform:capitalize;font-weight: 1000;color:#8EA2C6" class="mr-5">CHU D</li>
+          <li class="nav-item active">
+            <a class="btn btn-primary mx-3" href="/home"><strong>Accueil</strong></a>
+          </li>
+
+
+          <li class="nav-item active">
+            <a class="btn btn-primary mx-3" href="/dossierpatient/creation"><strong>Ajouter dossier</strong></a>
+          </li>
+          <li class="nav-item active">
+            <a class="btn btn-primary mx-3" href="/analyses/Demande/Creation/"><strong>Ajouter Demande</strong></a>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="btn btn-primary mx-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+              <strong>Ajouter résultat</strong>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                   <a class="dropdown-item text-primary" href="analyses/Result/Biochimie/Creation/">Biochimie</a>
+                   <a class="dropdown-item text-primary" href="analyses/Result/CoproParasitology/Creation/">Copro-Parasitologie</a>
+                   <a class="dropdown-item text-primary" href="analyses/Result/Bilan-Urgence-Result/Creation/">Bilan d'urgence</a>
+                  <a class="dropdown-item text-primary" href="analyses/Result/hemobiologie/Groupage-Sanguin/Creation/">groupage sanguin</a>
+                   <a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/AcinetobacterResult/Creation/">Acinetobacter</a>
+                   <a class="dropdown-item text-primary" href="analyses/ Result/Microbiologie/Enterocoque/Creation/">Enterocoque</a>
+                   <a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Enterobacteries/Creation/">Enterobacteries</a>
+                   <a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Staphylocoque/Creation/">Staphylocoque</a>
+                   <a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Pseudomonas/Creation/">Pseudomonas</a>
+                   <a class="dropdown-item text-primary" href="analyses/Result/Microbiologie/Resultat-Bactériologie/Creation/">Resultat-Bactériologie</a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item active">
+            <a class="btn btn-primary mx-3" href="/charts/charts/"><strong>Statistiques</strong></a>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="btn btn-primary mx-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+              <strong>Profile</strong>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                   <a class="dropdown-item text-primary" href="/accounts/profile">Votre profile</a>
+                   <a class="dropdown-item text-primary" href="/accounts/profile/edit">Modifier les informations personnelles</a>
+                   <a class="dropdown-item text-primary" href="/accounts/profile/change-password">Changer votre mot de passe </a>
+              </div>
+            </div>
+          </li>
+          </ul>
+        </div>
+          <div class="nav navbar-right">
+           <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item active">
+            <a class="btn btn-primary" href="/accounts/login"><strong>Déconnexion</strong></a>
+          </li>
+
+        </ul>
+      </div>
+
+      </nav>
+
+      <h1 class="title" style="margin: 50px ; text-align: center;font-size: 50px;text-transform:capitalize;font-weight: 1000;color:white;">Fichier des examens - Laboratoires</h1>
+      <div class="filters">
+        <div class="container">
+      <form method="post">
+       <div class="form-row border border mt-5 mb-5 ml-5 mr-5" style="background-color:#b2c7f1;">
+         <div class="col mt-3 mb-5 ml-5 mr-5">
+           <div style="color:white;">
+            <h2><center><strong>Recherche</strong></center></h2>
+         </div>
+
+
+
+                                  <div class="form-horizontal">
+                                      <div class="form-group row">
+                                          <label for="SearchKeyword" class="col-xs-12 col-sm-5 col-md-3 col-form-label" style="color:white;"><strong>Nom à rechercher</strong></label>
+                                          <div class="col-12 col-sm-6">
+                                              <input class="form-control" id="SearchKeyword" name="SearchKeyword" type="text" value="" />
+                                          </div>
+                                      </div>
+                                  </div>
+
+                                      <div class="form-group row">
+                                          <div class="col-12" style='text-align:center;color:white'><strong>ou rechercher par filtres (pour les demande d'examen)</strong></div>
+                                      </div>
+                                      <div class="form-group row">
+                                          <label for="SearchKeyword" class="col-xs-12 col-sm-5 col-md-3 col-form-label" style="color:white;"><strong>Date de naissance à rechercher</strong></label>
+                                          <div class="col-12 col-sm-6">
+                                              <input class="form-control" id="SearchKeyword" name="SearchKeyword" type="text" value="" />
+                                          </div>
+                                          </div>
+                                          <div class="col-xs-12 text-center mt-3">
+                                          <a class="btn btn" href="/home"style="color:white;background-color:#7F8FA6;"><strong>Réinitialiser</strong></a>
+                                          <button type="submit" class="btn btn" style="color:white;background-color:#7F8FA6;"id="btnSearch"><strong>Chercher</strong></button>
+                                          <a class="btn btn" href="/dossierpatient/ListDossierPatient"style="color:white;background-color:#7F8FA6;"><strong>Liste des dossiers</strong></a>
+                                          <a class="btn btn" href="/analyses/Result/hemobiologie/Groupage-Sanguin/Liste/"style="color:white;background-color:#7F8FA6;"><strong>liste de groupage sanguin </strong></a>
+                                          </div>
+
+                                          </div>
+
+</form>
+</div>
+<div class="form-group form-group-spaced">
+</div>
+
+</section>
+  </body>
+</html>

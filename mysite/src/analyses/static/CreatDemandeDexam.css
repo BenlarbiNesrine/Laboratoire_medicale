@@ -260,7 +260,7 @@ h6 {
 }
 
 .bg-gra-03 {
-  background: -webkit-gradient(linear, left bottom, right top, from(#b2c7f1), to(#aec5f2));
+
   background: -webkit-linear-gradient(bottom left, #b2c7f1 0%, #aec5f2 100%);
   background: -moz-linear-gradient(bottom left, #b2c7f1 0%, #aec5f2 100%);
   background: -o-linear-gradient(bottom left, #b2c7f1 0%, #aec5f2 100%);
@@ -740,6 +740,6 @@ input {
 }
 
 .card-5 .card-body {
-  padding: 52px 85px;
+  padding: 52px 75px;
   padding-bottom: 73px;
 }

@@ -4,9 +4,12 @@ import datetime
 
 # Create your models here.
 
+
+
+
 class DossierPatient(models.Model):
   user                                   = models.ForeignKey(User , on_delete="None")
-  Horodatage_création_de_dossier         = models.DateTimeField(blank=True , default=datetime.datetime.now)
+  Horodatage_creation_de_dossier         = models.DateTimeField(blank=True , default=datetime.datetime.now)
   nom_patient                            = models.CharField(max_length=40)
   Femme                                  = 'Femme'
   Homme                                  = 'Homme'

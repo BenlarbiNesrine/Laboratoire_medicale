@@ -1,0 +1,132 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <title>Liste dossier patient</title>
+    <!-- Icons font CSS-->
+    <link href="{%static 'vendor/mdi-font/css/material-design-iconic-font.min.css'%}" rel="stylesheet" media="all">
+    <link href="{%static 'vendor/font-awesome-4.7/css/font-awesome.min.css'%}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="{%static 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i'%}" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{%static 'vendor/select2/select2.min.css '%}" rel="stylesheet" media="all">
+    <link href="{%static 'vendor/datepicker/daterangepicker.css '%}" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <ul class="navbar-nav">
+            <li style="font-size: 30px;text-transform:capitalize;font-weight: 1000;color:#8EA2C6" class="mr-5">CHU D</li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/home"><strong>Accueil</strong></a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="/dossierpatient/create"><strong>Ajouter dossier</strong></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/analyses/ Demande/Create-demande"><strong>Ajouter Demande</strong></a>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="btn btn" type="button"  style="color:white;"id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+              <strong>Ajouter résultat</strong>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                   <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Result/Create-Biochimie-Result">Biochimie</a>
+                   <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Create-CoproParasitology-Result">Copro-Parasitologie</a>
+                   <a class="dropdown-item text-primary" href="analyses/ Demande/Result/Create-Bilan-Urgence-Result">Bilan d'urgence</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="btn btn" style="color:white;" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+              <strong>Profile</strong>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                   <a class="dropdown-item text-primary" href="/accounts/profile">Votre profile</a>
+                   <a class="dropdown-item text-primary" href="/accounts/profile/edit">Modifier les informations personnelles</a>
+                   <a class="dropdown-item text-primary" href="/accounts/profile/change-password">Changer votre mot de passe </a>
+              </div>
+            </div>
+          </li>
+
+          <li>
+              <form class="form-inline" action="/action_page.php">
+                   <input class="form-control mr-sm-2" type="text" placeholder="Chercher">
+                   <button class="btn btn mr-5" type="submit" style="color: white ;"><strong>Chercher</strong></button>
+              </form>
+          </li>
+          <div class="nav navbar-right">
+           <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item active">
+            <a class="nav-link" href="/accounts/login"><strong>Déconnexion</strong></a>
+          </li>
+
+          </ul>
+          </div>
+
+        </ul>
+      </nav>
+      </nav>
+ <div class="container">
+   <div class="row my-4">
+     <div class="col-md-8">
+        <a href="dossierpatient/exporter/pdf/" class="btn btn mr-5" style="background-color:#82a8ea"><left>Exporter en PDF</left> </a>
+        <a href="dossierpatient/exporter/excel/" class="btn btn mx-5"style="background-color:#457fe6">Exporter en Excel </a>
+        <a href="dossierpatient/exporter/svc/" class="btn btn mx-5" style="background-color:#a3b8dc">Exporter en CSV </a>
+
+        </div>
+        <div>
+            <a href="dossierpatient/exporter/svc/" class="btn btn ml-5" style="background-color:#71767f">Afficher statistiques </a>
+        </div>
+     <div class="col-md-4">
+
+     </div>
+   </div>
+
+   <table class="table table-striped">
+     <thead>
+       <tr style="background-color:#B8D6FD;">
+         <th><Center>Horodatage de creation</Center></th>
+          <th><Center>Nom Patient</Center></th>
+          <th><Center>Date De Naissance</Center></th>
+          <th><Center>Sexe</Center></th>
+          <th><Center>Actions</Center></th>
+       </tr>
+
+     </thead>
+
+    {% for DossierPatient in main %}
+ <tbody>
+  <tr>
+    <td><Center>{{ DossierPatient.Horodatage_creation_de_dossier }}</Center></td>
+    <td><Center>{{ DossierPatient.nom_patient }}</Center></td>
+    <td><Center>{{ DossierPatient.date_de_naissance }}</Center></td>
+    <td><Center>{{ DossierPatient.sexe }}</Center></td>
+    <td> <center>
+      <a href="dossierpatient/ edit/{{ DossierPatient.id }}"><span class="btn btn-primary">Modifier</span></a>
+      <a href="dossierpatient/ edit/{{ DossierPatient.id }}"><span class="btn btn-primary ml-5">Ajouter Demande</span></a>
+
+    </center>
+    </td>
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
+</div>
+  </body>
+</html>
